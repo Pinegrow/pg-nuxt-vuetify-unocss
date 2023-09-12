@@ -11,7 +11,7 @@
 <template>
   <section>
     <div
-      class="bg-center bg-cover bg-design-image bg-no-repeat blur-none z-0 lg:bg-design-image-large"
+      class="bg-center bg-cover bg-design-image bg-no-repeat blur-none lg:bg-design-image-large z-0"
     >
       <div
         class="pb-36 pt-2 px-6 relative rounded-3xl md:pb-48 lg:pb-72 lg:px-12"

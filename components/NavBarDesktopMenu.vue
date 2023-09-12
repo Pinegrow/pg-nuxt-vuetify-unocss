@@ -33,7 +33,8 @@
       size="large"
       color="secondary"
       trailing
-      ><span>Try Now</span>
+    >
+      <span>Try Now</span>
       <template #append>
         <v-icon icon="i-mdi-pine-tree" class="-ml-1 mr-1" size="24px"></v-icon>
       </template>

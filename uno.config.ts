@@ -8,6 +8,7 @@ import {
   defineConfig,
   presetAttributify,
   presetUno,
+  presetTypography,
   presetWind,
   presetIcons,
   transformerDirectives,
@@ -22,6 +23,7 @@ export default defineConfig({
     presetWind(),
     // presetUno(),
     // ...custom presets
+    presetTypography(),
     presetIcons({
       prefix: 'i-', // default prefix, do not change
     }),

@@ -41,8 +41,9 @@ export default defineNuxtConfig({
       },
       tailwindcss: {
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
-        configPath: 'uno.config.ts',
-        cssPath: '@/assets/css/main.css',
+        // Temporary files to use tailwind in Vue Designer for unocss
+        configPath: './temp/tailwind.config.ts',
+        cssPath: './temp/tailwind.css',
         restartOnThemeUpdate: true,
       },
       // plugins: [

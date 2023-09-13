@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    // '@unocss/preset-icons',
     '@pinegrow/nuxt-module',
     '@unocss/nuxt',
     '@nuxt/devtools',

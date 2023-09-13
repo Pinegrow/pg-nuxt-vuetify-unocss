@@ -27,7 +27,7 @@
             size="small"
             class="ml-2"
             color="secondary"
-            href="https://github.com/pinegrow/pg-nuxt-vuetify-tailwindcss"
+            href="https://github.com/pinegrow/pg-nuxt-vuetify-unocss"
             target="_blank"
             ><span class="text-sm text-subtitle-2">Click here</span>
           </v-btn>

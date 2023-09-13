@@ -26,7 +26,7 @@
   // );
 
   .v-btn--icon {
-    width: inherit;
-    height: inherit;
+    width: 36px;
+    height: 36px;
   }
 </style>

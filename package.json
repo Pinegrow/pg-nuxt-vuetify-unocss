@@ -1,10 +1,10 @@
 {
-  "name": "pg-nuxt-vuetify-tailwindcss",
+  "name": "pg-nuxt-vuetify-unocss",
   "version": "0.0.0",
-  "homepage": "https://pg-nuxt-vuetify-tailwindcss.netlify.app",
+  "homepage": "https://pg-nuxt-vuetify-unocss.netlify.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pinegrow/pg-nuxt-vuetify-tailwindcss.git"
+    "url": "https://github.com/pinegrow/pg-nuxt-vuetify-unocss.git"
   },
   "scripts": {
     "dev": "nuxt dev",
@@ -28,8 +28,6 @@
     "@pinegrow/nuxt-module": "^3.0.6",
     "@pinegrow/tailwindcss-plugin": "^3.0.7",
     "@pinegrow/vuetify-plugin": "^3.0.16",
-    "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.5.0",
     "@unocss/nuxt": "^0.54.1",
     "@unocss/preset-icons": "^0.54.1",
@@ -43,7 +41,6 @@
     "postcss": "^8.4.22",
     "prettier": "^2.8.4",
     "rehype-external-links": "^2.1.0",
-    "tailwindcss": "^3.3.1",
     "typescript": "^5.0.4",
     "vuetify-nuxt-module": "^0.5.6"
   },

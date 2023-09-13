@@ -1,12 +1,11 @@
 // import { fileURLToPath, URL } from 'node:url'
-import presetIcons from '@unocss/preset-icons'
 
 export default defineNuxtConfig({
   // ssr: false,
   runtimeConfig: {
     public: {
       title: `Vue Designer`,
-      description: 'Vue Designer Nuxt Vuetify - Quick start template',
+      description: 'Vue Designer Nuxt Vuetify UnoCSS',
       author: 'Pinegrow',
       nav: [
         { text: 'Home', link: '/' },
@@ -41,8 +40,8 @@ export default defineNuxtConfig({
       },
       tailwindcss: {
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
-        configPath: 'tailwind.config.ts',
-        cssPath: '@/assets/css/tailwind.css',
+        configPath: 'uno.config.ts',
+        cssPath: '@/assets/css/main.css',
         restartOnThemeUpdate: true,
       },
       // plugins: [
@@ -59,15 +58,10 @@ export default defineNuxtConfig({
 
   // Vuetify's global styles
   css: [
+    '@unocss/reset/tailwind.css',
     '~/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
     '~/assets/vuetify/main.scss', // If customizing Vuetify sass variables
   ],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
 
   // Vuetify Nuxt module, thanks Joaquín (userquin)
   vuetify: {
@@ -104,12 +98,5 @@ export default defineNuxtConfig({
     highlight: {
       theme: 'dracula-soft',
     },
-  },
-  unocss: {
-    presets: [
-      presetIcons({
-        prefix: 'i-', // default prefix, do not change
-      }),
-    ],
   },
 })

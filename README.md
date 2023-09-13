@@ -1,8 +1,8 @@
-# eCommerce Store - Fullstack app with beautiful, accessible components from Vuetify library, styled with Tailwind CSS
+# eCommerce Store - Fullstack app with beautiful, accessible components from Vuetify library, styled with Uno CSS
 
 Nuxt 3 Full stack (SPA-SSR) quick start template that pre-includes the [Pinegrow Nuxt Module](https://www.npmjs.com/package/@pinegrow/nuxt-module), [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/), [Pinegrow Vuetify Plugin](https://www.npmjs.com/package/@pinegrow/vuetify-plugin) and other goodies for Vue Designer. This template uses the amazing Vuetify component library and features an eCommerce store, where data is fetched via APIs server by server routes (Nitro-powered).
 
-Demo - https://pg-nuxt-vuetify-tailwindcss.netlify.app/
+Demo - https://pg-nuxt-vuetify-unocss.netlify.app/
 
 ## Vue Designer
 
@@ -18,15 +18,15 @@ Clean code 😃, No lock-in - You are in control of your projects and developmen
 
 ### 1. Clone to local
 
-[Create a repo from this template on GitHub](https://github.com/pinegrow/pg-nuxt-vuetify-tailwindcss/generate).
+[Create a repo from this template on GitHub](https://github.com/pinegrow/pg-nuxt-vuetify-unocss/generate).
 
 (or)
 
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx giget@latest gh:pinegrow/pg-nuxt-vuetify-tailwindcss my-nuxt-vuetify-tailwindcss-app #project-name
-cd my-nuxt-vuetify-tailwindcss-app
+npx giget@latest gh:pinegrow/pg-nuxt-vuetify-unocss my-nuxt-vuetify-unocss-app #project-name
+cd my-nuxt-vuetify-unocss-app
 npm install #or use pnpm
 ```
 
@@ -60,7 +60,7 @@ And you will see the generated file in `dist` that's ready to be served.
 ### Deploy to Netlify
 
 You can deploy this repo as a site on your own to explore and experiment with, by clicking this button.
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Pinegrow/pg-nuxt-vuetify-tailwindcss)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Pinegrow/pg-nuxt-vuetify-unocss)
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 

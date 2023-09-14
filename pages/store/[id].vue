@@ -78,9 +78,7 @@
         <div>
           <span class="font-bold text-xl">${{ product.price }}</span>
         </div>
-        <div class="md:mr-4">
-          <span>Best Deals Inc.</span>
-        </div>
+        <div class="md:mr-4"><span>Best Deals Inc.</span></div>
       </div>
       <div>
         <div class="mt-4">
@@ -99,7 +97,8 @@
             class="rounded-lg"
             size="x-large"
             block
-            ><span class="py-2 lg:text-lg">Add To Cart</span>
+          >
+            <span class="py-2 lg:text-lg">Add To Cart</span>
           </v-btn-square>
         </div>
       </div>

@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     // '@unocss/preset-icons',
     '@pinegrow/nuxt-module',
     '@unocss/nuxt',
-    '@nuxt/devtools',
+    // '@nuxt/devtools',
     '@nuxt/content',
     '@vueuse/nuxt',
     'vuetify-nuxt-module',

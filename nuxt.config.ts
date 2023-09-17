@@ -28,22 +28,24 @@ export default defineNuxtConfig({
     'vuetify-nuxt-module',
     // '@nuxt/ui',
     '@nuxtjs/html-validator',
+    '@nuxt/image',
   ],
   pinegrow: {
     liveDesigner: {
       iconPreferredCase: 'unocss', // default value (can be removed), nuxt/ui uses the unocss format for icon names
       devtoolsKey: 'devtools', // see plugins/devtools.client.ts
-      vuetify: {
-        configPath: 'vuetify.config.ts',
-        cssPath: '@/assets/css/main.css',
-        utilities: false,
-        restartOnThemeUpdate: true,
-      },
       tailwindcss: {
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
         // Temporary files to use tailwind in Vue Designer for unocss
         configPath: './temp/tailwind.config.ts',
         cssPath: './temp/tailwind.css',
+        restartOnThemeUpdate: true,
+      },
+      vuetify: {
+        configPath: 'vuetify.config.ts',
+        // cssPath: '@/assets/css/main.css',
+        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
+        utilities: false,
         restartOnThemeUpdate: true,
       },
       // plugins: [
@@ -81,6 +83,23 @@ export default defineNuxtConfig({
   // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
   experimental: {
     inlineSSRStyles: false,
+  },
+
+  image: {
+    domains: ['images.unsplash.com'],
+    alias: {
+      unsplash: 'https://images.unsplash.com',
+    },
+    // The screen sizes predefined by `@nuxt/image`:
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+    },
   },
 
   content: {

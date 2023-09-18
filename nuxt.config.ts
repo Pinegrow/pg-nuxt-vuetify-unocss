@@ -39,14 +39,15 @@ export default defineNuxtConfig({
         // Temporary files to use tailwind in Vue Designer for unocss
         configPath: './temp/tailwind.config.ts',
         cssPath: './temp/tailwind.css',
+        // restartOnConfigUpdate: true,
         restartOnThemeUpdate: true,
       },
       vuetify: {
         configPath: 'vuetify.config.ts',
-        // cssPath: '@/assets/css/main.css',
         themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
         utilities: false,
-        restartOnThemeUpdate: true,
+        // restartOnConfigUpdate: true,
+        // restartOnThemeUpdate: true,
       },
       // plugins: [
       //   {
@@ -74,6 +75,7 @@ export default defineNuxtConfig({
       styles: {
         configFile: 'assets/vuetify/settings.scss',
       },
+      includeTransformAssetsUrls: true,
       //...
     },
 

@@ -2,7 +2,16 @@
   const route = useRoute()
   const { id: productId } = route.params
 
-  const product = await useProduct(+productId)
+  const productRaw = await useProduct(+productId)
+
+  const { optimizeImage } = useOptimizeImage()
+
+  const product = computed(() => {
+    return {
+      ...productRaw.value,
+      imageOptimized: optimizeImage(productRaw.value.image),
+    }
+  })
 
   useHead({
     title: computed(() => product.value?.title || ''),
@@ -28,16 +37,16 @@
   ]
 
   const selected = ref(colors[0])
-
-  const current = computed(() =>
-    colors.find((color) => color.id === selected.value.id),
-  )
 </script>
 <template layout="default">
   <section class="mx-4 my-16 product-details">
     <div class="flex justify-center max-h-96 xl:max-h-[600px]">
       <div class="-m-4 bg-white p-8 rounded-lg w-full">
-        <v-img :src="product.image" class="max-h-full"></v-img>
+        <v-img
+          :src="product.imageOptimized.imageSrc"
+          :sizes="product.imageOptimized.imageSizes.sizes"
+          class="max-h-full"
+        ></v-img>
       </div>
     </div>
     <div class="mt-8 md:mt-0 md:mx-8">

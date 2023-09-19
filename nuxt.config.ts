@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    // '@unocss/preset-icons',
     '@pinegrow/nuxt-module',
     '@unocss/nuxt',
     // '@nuxt/devtools',
@@ -66,16 +65,26 @@ export default defineNuxtConfig({
     '@unocss/reset/tailwind.css',
     '~/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
     '~/assets/vuetify/main.scss', // If customizing Vuetify sass variables
+    'lite-youtube-embed/src/lite-yt-embed.css',
   ],
 
   // Vuetify Nuxt module, thanks Joaquín (userquin)
   vuetify: {
     moduleOptions: {
       /* If customizing sass variables of vuetify components */
-      styles: {
-        configFile: 'assets/vuetify/settings.scss',
-      },
+      /* If enabling this, set experimental.inlineSSRStyles to false */
+      // styles: {
+      //   configFile: 'assets/vuetify/settings.scss',
+      // },
       includeTransformAssetsUrls: true,
+      // ssrClientHints: {
+      //   reloadOnFirstRequest: false,
+      //   prefersColorScheme: true,
+      //   prefersColorSchemeOptions: {
+      //     useBrowserThemeOnly: false,
+      //   },
+      //   viewportSize: true,
+      // },
       //...
     },
 
@@ -83,12 +92,12 @@ export default defineNuxtConfig({
   },
 
   // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
-  experimental: {
-    inlineSSRStyles: false,
-  },
+  // experimental: {
+  //   inlineSSRStyles: false,
+  // },
 
   image: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'fakestoreapi.com'],
     alias: {
       unsplash: 'https://images.unsplash.com',
     },
@@ -101,6 +110,22 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1536,
       '2xl': 1536,
+    },
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'jpg',
+          width: 80,
+          height: 80,
+        },
+      },
+      // product: {
+      //   modifiers: {
+      //     format: 'jpg',
+      //     // width: 50,
+      //     height: 256,
+      //   },
+      // },
     },
   },
 
@@ -120,6 +145,11 @@ export default defineNuxtConfig({
     },
     highlight: {
       theme: 'dracula-soft',
+    },
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag === 'lite-youtube',
     },
   },
 })

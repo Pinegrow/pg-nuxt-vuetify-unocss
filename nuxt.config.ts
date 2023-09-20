@@ -38,13 +38,14 @@ export default defineNuxtConfig({
         // Temporary files to use tailwind in Vue Designer for unocss
         configPath: './temp/tailwind.config.ts',
         cssPath: './temp/tailwind.css',
+        // themePath: false, // Set to false so that Design Panel is not used
         // restartOnConfigUpdate: true,
         restartOnThemeUpdate: true,
       },
       vuetify: {
         configPath: 'vuetify.config.ts',
-        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
         utilities: false,
+        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
         // restartOnConfigUpdate: true,
         // restartOnThemeUpdate: true,
       },
@@ -152,4 +153,12 @@ export default defineNuxtConfig({
       isCustomElement: (tag) => tag === 'lite-youtube',
     },
   },
+  // Don't remove the below set of unocss commented line (temporary workaround to use unocss with wind preset in Vue Designer) - @unocss/preset-icons
+  // unocss: {
+  //   presets: [
+  //     presetIcons({
+  //       prefix: 'i-', // default prefix, do not change
+  //     }),
+  //   ],
+  // },
 })

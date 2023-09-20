@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    // '@unocss/preset-icons',
     '@pinegrow/nuxt-module',
     '@unocss/nuxt',
     // '@nuxt/devtools',
@@ -28,23 +27,27 @@ export default defineNuxtConfig({
     'vuetify-nuxt-module',
     // '@nuxt/ui',
     '@nuxtjs/html-validator',
+    '@nuxt/image',
   ],
   pinegrow: {
     liveDesigner: {
       iconPreferredCase: 'unocss', // default value (can be removed), nuxt/ui uses the unocss format for icon names
       devtoolsKey: 'devtools', // see plugins/devtools.client.ts
-      vuetify: {
-        configPath: 'vuetify.config.ts',
-        cssPath: '@/assets/css/main.css',
-        utilities: false,
-        restartOnThemeUpdate: true,
-      },
       tailwindcss: {
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
         // Temporary files to use tailwind in Vue Designer for unocss
         configPath: './temp/tailwind.config.ts',
         cssPath: './temp/tailwind.css',
+        // themePath: false, // Set to false so that Design Panel is not used
+        // restartOnConfigUpdate: true,
         restartOnThemeUpdate: true,
+      },
+      vuetify: {
+        configPath: 'vuetify.config.ts',
+        utilities: false,
+        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
+        // restartOnConfigUpdate: true,
+        // restartOnThemeUpdate: true,
       },
       // plugins: [
       //   {
@@ -63,14 +66,25 @@ export default defineNuxtConfig({
     '@unocss/reset/tailwind.css',
     '~/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
     '~/assets/vuetify/main.scss', // If customizing Vuetify sass variables
+    'lite-youtube-embed/src/lite-yt-embed.css',
   ],
 
   // Vuetify Nuxt module, thanks Joaquín (userquin)
   vuetify: {
     moduleOptions: {
       /* If customizing sass variables of vuetify components */
-      styles: {
-        configFile: 'assets/vuetify/settings.scss',
+      /* If enabling this, set experimental.inlineSSRStyles to false */
+      // styles: {
+      //   configFile: 'assets/vuetify/settings.scss',
+      // },
+      includeTransformAssetsUrls: true,
+      ssrClientHints: {
+        reloadOnFirstRequest: false,
+        prefersColorScheme: true,
+        prefersColorSchemeOptions: {
+          useBrowserThemeOnly: false,
+        },
+        viewportSize: true,
       },
       //...
     },
@@ -79,8 +93,41 @@ export default defineNuxtConfig({
   },
 
   // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
-  experimental: {
-    inlineSSRStyles: false,
+  // experimental: {
+  //   inlineSSRStyles: false,
+  // },
+
+  image: {
+    domains: ['images.unsplash.com', 'fakestoreapi.com'],
+    alias: {
+      unsplash: 'https://images.unsplash.com',
+    },
+    // The screen sizes predefined by `@nuxt/image`:
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+    },
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'jpg',
+          width: 80,
+          height: 80,
+        },
+      },
+      // product: {
+      //   modifiers: {
+      //     format: 'jpg',
+      //     // width: 50,
+      //     height: 256,
+      //   },
+      // },
+    },
   },
 
   content: {
@@ -101,4 +148,17 @@ export default defineNuxtConfig({
       theme: 'dracula-soft',
     },
   },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag === 'lite-youtube',
+    },
+  },
+  // Don't remove the below set of unocss commented line (temporary workaround to use unocss with wind preset in Vue Designer) - @unocss/preset-icons
+  // unocss: {
+  //   presets: [
+  //     presetIcons({
+  //       prefix: 'i-', // default prefix, do not change
+  //     }),
+  //   ],
+  // },
 })

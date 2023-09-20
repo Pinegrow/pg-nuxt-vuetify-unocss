@@ -28,6 +28,10 @@ export default defineConfig({
       prefix: 'i-', // default prefix, do not change
     }),
   ],
+  // Equivalent to tailwind's important properties in tailwind config file
+  postprocess(obj) {
+    obj.entries.forEach((i) => (i[1] = i[1] + ' !important'))
+  },
   theme: {
     colors: pg_colors,
     fontFamily: pg_fonts,

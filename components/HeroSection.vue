@@ -1,12 +1,11 @@
 <script setup lang="ts">
   import { pg_background_urls } from '~~/themes/pg-tailwindcss/tokens.mjs'
 
-  const { optimizeImage, optimizeImages } = useOptimizeImage()
-
   const heroImageUrl =
     pg_background_urls['design-image-large'] ||
     pg_background_urls['design-image']
 
+  const { optimizeImage, optimizeImages } = useOptimizeImage()
   const heroImageOptimized = optimizeImage(heroImageUrl)
 
   const avatarImageUrls = [
@@ -14,7 +13,6 @@
     'https://images.unsplash.com/photo-1573495612522-d994e72e5f56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE4fHxhZnJpY2FuJTIwY29tcHV0ZXIlMjB3b21hbnxlbnwwfHx8fDE2ODcxNjg5NzV8MA&ixlib=rb-4.0.3&q=80&w=200',
     'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=M3wyMDkyMnwwfDF8c2VhcmNofDJ8fGF2YXRhcnxlbnwwfHx8fDE2OTUxMDA0OTV8MA&ixlib=rb-4.0.3q=85&fm=jpg&crop=faces&cs=srgb&w=40&h=40&fit=crop',
   ]
-
   const avatarImageUrlsOptimized = optimizeImages(avatarImageUrls, 'avatar')
 </script>
 <template>

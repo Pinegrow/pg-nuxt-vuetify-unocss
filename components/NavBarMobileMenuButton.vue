@@ -3,7 +3,7 @@
   const { isMobileMenuOpen, openMobileMenu } = useMobileMenu()
 </script>
 <template>
-  <v-btn-square
+  <v-icon-btn
     :icon="
       isMobileMenuOpen ? 'i-material-symbols-close' : 'i-material-symbols-menu'
     "
@@ -18,15 +18,15 @@
       "
       size="20px"
     ></v-icon>
-  </v-btn-square>
+  </v-icon-btn>
 </template>
 <style lang="scss" scoped>
   // @use '~/assets/vuetify/settings.scss' with (
   //   $button-icon-density: 'compact'
   // );
 
-  .v-btn--icon {
-    width: 40px;
-    height: 40px;
-  }
+  // .v-btn--icon {
+  //   width: inherit;
+  //   height: inherit;
+  // }
 </style>

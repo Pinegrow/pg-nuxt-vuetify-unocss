@@ -2,33 +2,30 @@
 
 export default defineNuxtConfig({
   // ssr: false,
-  runtimeConfig: {
-    public: {
-      title: `Vue Designer`,
-      description: 'Vue Designer Nuxt Vuetify UnoCSS',
-      author: 'Pinegrow',
-      nav: [
-        { text: 'Home', link: '/' },
-        { text: `Store`, link: '/store' },
-        { text: `Quick Start`, link: '/quick-start' },
-        { text: 'Subscribe', link: '/subscribe' },
-      ],
-    },
-    app: {
-      baseURL: '/',
+  devtools: { enabled: false }, // Disable when using Vue devtools
+
+  // Look into MetaTags.vue for other flavours
+  app: {
+    baseURL: '/',
+    head: {
+      meta: [{ charset: 'utf-8' }],
     },
   },
+
   modules: [
     '@pinegrow/nuxt-module',
     '@unocss/nuxt',
-    // '@nuxt/devtools',
+    '@nuxt/devtools',
     '@nuxt/content',
     '@vueuse/nuxt',
-    'vuetify-nuxt-module',
-    // '@nuxt/ui',
+    '@pinia/nuxt',
     '@nuxtjs/html-validator',
     '@nuxt/image',
+    '@vee-validate/nuxt',
+    'vuetify-nuxt-module',
+    // '@nuxt/ui',
   ],
+
   pinegrow: {
     liveDesigner: {
       iconPreferredCase: 'unocss', // default value (can be removed), nuxt/ui uses the unocss format for icon names
@@ -98,35 +95,44 @@ export default defineNuxtConfig({
   // },
 
   image: {
-    domains: ['images.unsplash.com', 'fakestoreapi.com'],
-    alias: {
-      unsplash: 'https://images.unsplash.com',
-    },
+    // sizes: 'xs:100vw sm:100vw md:100vw lg:100vw xl:100vw', // Not yet supported - https://github.com/nuxt/image/issues/216
+    // densities: [1,2], // default
+    quality: 80, // can be overridden as NuxtImg prop
+    format: ['webp'], // default
     // The screen sizes predefined by `@nuxt/image`:
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536,
-      '2xl': 1536,
-    },
+    // screens: {
+    //   xs: 320,
+    //   sm: 640,
+    //   md: 768,
+    //   lg: 1024,
+    //   xl: 1280,
+    //   xxl: 1536,
+    //   '2xl': 1536,
+    // },
     presets: {
       avatar: {
         modifiers: {
-          format: 'jpg',
+          format: 'webp',
           width: 80,
           height: 80,
         },
       },
-      // product: {
-      //   modifiers: {
-      //     format: 'jpg',
-      //     // width: 50,
-      //     height: 256,
-      //   },
-      // },
+    },
+    domains: ['images.unsplash.com', 'fakestoreapi.com', 'res.cloudinary.com'],
+    alias: {
+      unsplash: 'https://images.unsplash.com',
+    },
+  },
+
+  veeValidate: {
+    // disable or enable auto imports
+    autoImports: true,
+    // Use different names for components
+    componentNames: {
+      Form: 'VeeForm',
+      Field: 'VeeField',
+      FieldArray: 'VeeFieldArray',
+      ErrorMessage: 'VeeErrorMessage',
     },
   },
 
@@ -148,11 +154,32 @@ export default defineNuxtConfig({
       theme: 'dracula-soft',
     },
   },
+
+  pinia: {
+    autoImports: [
+      // automatically imports `defineStore`
+      'defineStore', // import { defineStore } from 'pinia'
+      ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
+      'storeToRefs',
+      'acceptHMRUpdate',
+    ],
+  },
+
+  imports: {
+    dirs: ['stores'],
+  },
+
   vue: {
     compilerOptions: {
       isCustomElement: (tag) => tag === 'lite-youtube',
     },
   },
+
+  sourcemap: {
+    client: false,
+    server: false,
+  },
+
   // Don't remove the below set of unocss commented line (temporary workaround to use unocss with wind preset in Vue Designer) - @unocss/preset-icons
   // unocss: {
   //   presets: [

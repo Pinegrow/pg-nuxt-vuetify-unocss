@@ -36,6 +36,7 @@
                 variant="elevated"
                 size="large"
                 class="mt-4"
+                to="/women"
               ></v-btn>
             </div>
           </div>

@@ -11,8 +11,10 @@
 <template>
   <main>
     <HeroSection />
-    <AboutTemplate />
-    <WalkThrough />
+    <v-container class="pt-8">
+      <LaunchSale class="mt-8" />
+      <HotDeals class="mt-8" />
+    </v-container>
   </main>
 </template>
 <style scoped></style>

@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "nuxt dev",
     "now": "npm run build && npm run preview",
-    "lighthouse": "npx unlighthouse --site https://pg-nuxt-vuetify-unocss.netlify.app",
+    "lighthouse": "npx unlighthouse --site http://localhost:3000",
+    "lighthouse:prod": "npx unlighthouse --site https://pg-nuxt-vuetify-unocss.netlify.app",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

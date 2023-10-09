@@ -11,10 +11,10 @@
 <template>
   <main>
     <HeroSection />
-    <v-container class="pt-8">
+    <div class="container mx-auto pt-8">
       <LaunchSale class="mt-8" />
       <HotDeals class="mt-8" />
-    </v-container>
+    </div>
   </main>
 </template>
 <style scoped></style>

@@ -4,6 +4,8 @@ import {
   pg_backgrounds,
 } from './themes/pg-tailwindcss/tokens.cjs'
 
+import { getFontsWithFallback } from './utils/font'
+
 import {
   defineConfig,
   presetAttributify,
@@ -34,7 +36,7 @@ export default defineConfig({
   },
   theme: {
     colors: pg_colors,
-    fontFamily: pg_fonts,
+    fontFamily: getFontsWithFallback(pg_fonts),
   },
   content: {
     pipeline: {

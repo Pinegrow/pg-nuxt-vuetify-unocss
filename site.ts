@@ -1,15 +1,39 @@
 export default {
-  title: `Vue Designer`,
+  name: 'VuCommerce',
   description: 'Vue Designer Nuxt Vuetify UnoCSS',
+  logo: 'i-fluent-emoji:shopping-bags',
   author: 'Pinegrow',
   url: 'https://pg-nuxt-vuetify-unocss.netlify.app',
+  github: 'https://github.com/pinegrow/pg-nuxt-vuetify-unocss',
+  defaultLocale: 'en', // default
+  identity: {
+    type: 'Organization',
+  } as any,
+  twitter: '@vuedesigner',
+  trailingSlash: false, // default
+  titleSeparator: '|', // default
   nav: [
-    { text: 'Home', link: '/', type: 'primary' },
-    { text: 'Women', link: '/women', type: 'primary' },
-    { text: 'Men', link: '/men', type: 'primary' },
-    { text: 'Jewellery', link: '/jewellery', type: 'primary' },
-    { text: 'Electronics', link: '/electronics', type: 'primary' },
-    { text: 'About Us', link: '/quick-start', type: 'primary' },
+    { text: 'Home', link: '/', type: 'primary', icon: 'i-mdi-home' },
+    { text: 'Women', link: '/women', type: 'primary', icon: 'i-mdi-home' },
+    { text: 'Men', link: '/men', type: 'primary', icon: 'i-mdi-home' },
+    {
+      text: 'Jewellery',
+      link: '/jewellery',
+      type: 'primary',
+      icon: 'i-mdi-home',
+    },
+    {
+      text: 'Electronics',
+      link: '/electronics',
+      type: 'primary',
+      icon: 'i-mdi-home',
+    },
+    {
+      text: 'About Us',
+      link: '/quick-start',
+      type: 'primary',
+      icon: 'i-mdi-home',
+    },
     {
       text: 'Track Order',
       link: '/track-order',

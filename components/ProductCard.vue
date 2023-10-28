@@ -14,9 +14,6 @@
       >{{ badge }}</span
     >
     <v-card border variant="outlined" class="md:h-full">
-      <div v-if="badge" class="absolute right-0 z-10">
-        <v-chip :text="badge" color="primary"></v-chip>
-      </div>
       <div class="h-64 relative">
         <div class="-m-4 bg-white p-8 rounded-lg">
           <v-img

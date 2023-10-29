@@ -4,6 +4,8 @@ import {
   pg_backgrounds,
 } from './themes/pg-tailwindcss/tokens.cjs'
 
+import { getFontsWithFallback } from './utils/font'
+
 import {
   defineConfig,
   presetAttributify,
@@ -13,6 +15,7 @@ import {
   presetIcons,
   transformerDirectives,
 } from 'unocss'
+import { presetForms } from '@julr/unocss-preset-forms'
 
 export default defineConfig({
   transformers: [transformerDirectives()],
@@ -24,6 +27,7 @@ export default defineConfig({
     // presetUno(),
     // ...custom presets
     presetTypography(),
+    presetForms(),
     presetIcons({
       prefix: 'i-', // default prefix, do not change
     }),
@@ -34,7 +38,7 @@ export default defineConfig({
   },
   theme: {
     colors: pg_colors,
-    fontFamily: pg_fonts,
+    fontFamily: getFontsWithFallback(pg_fonts),
   },
   content: {
     pipeline: {

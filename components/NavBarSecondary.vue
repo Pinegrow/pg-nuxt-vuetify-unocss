@@ -14,9 +14,9 @@
     v-for="(item, index) in dropdownItems"
     :key="index"
     :value="index"
-    :prepend-icon="item.icon"
     :to="item.to"
     :title="item.label"
+    :prepend-icon="item.icon"
   >
   </v-list-item>
 </template>

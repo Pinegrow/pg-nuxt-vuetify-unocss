@@ -15,6 +15,7 @@ import {
   presetIcons,
   transformerDirectives,
 } from 'unocss'
+import { presetForms } from '@julr/unocss-preset-forms'
 
 export default defineConfig({
   transformers: [transformerDirectives()],
@@ -26,6 +27,7 @@ export default defineConfig({
     // presetUno(),
     // ...custom presets
     presetTypography(),
+    presetForms(),
     presetIcons({
       prefix: 'i-', // default prefix, do not change
     }),

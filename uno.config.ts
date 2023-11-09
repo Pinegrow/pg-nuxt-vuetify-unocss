@@ -47,6 +47,7 @@ export default defineConfig({
           // the default
           /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
           // include js/ts files
+          './*.{js,cjs,ts,cts,mts}', // site.ts
           '*/**/*.{js,cjs,ts,cts,mts}',
         ]
         return process.env.NODE_ENV === 'production'

@@ -44,14 +44,10 @@ export default defineConfig({
     pipeline: {
       get include() {
         const _content = [
-          './components/**/*.{js,vue,ts}',
-          './layouts/**/*.vue',
-          './pages/**/*.vue',
-          './plugins/**/*.{js,ts}',
-          './nuxt.config.{js,ts}',
-          './vuetify.config.{js,ts}',
-          './app.vue',
-          '*.{mjs,js,ts}',
+          // the default
+          /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+          // include js/ts files
+          '*/**/*.{js,cjs,ts,cts,mts}',
         ]
         return process.env.NODE_ENV === 'production'
           ? _content

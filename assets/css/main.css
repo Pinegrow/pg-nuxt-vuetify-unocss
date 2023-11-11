@@ -15,7 +15,7 @@ html {
   @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
 }
 
-h1 {
+/* h1 {
   @apply text-4xl font-bold md:text-5xl lg:text-6xl  tracking-tight;
 }
 h2 {
@@ -39,4 +39,4 @@ optgroup,
 select,
 textarea {
   @apply text-black;
-}
+} */

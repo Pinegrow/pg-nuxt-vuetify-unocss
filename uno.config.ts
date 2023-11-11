@@ -27,7 +27,7 @@ export default defineConfig({
     // presetUno(),
     // ...custom presets
     presetTypography(),
-    presetForms(),
+    // presetForms(), // conflicts with vuetify, so turned it off
     presetIcons({
       prefix: 'i-', // default prefix, do not change
     }),

@@ -27,10 +27,6 @@ export default defineNuxtConfig({
   // ssr: false,
   devtools: { enabled: false }, // Disable when using Vue devtools
 
-  experimental: {
-    componentIslands: true,
-  },
-
   app: {
     baseURL: '/', // defaulted by nuxt
     // Look into HeadAndMeta.vue for the rest
@@ -90,9 +86,9 @@ export default defineNuxtConfig({
     moduleOptions: {
       /* If customizing sass variables of vuetify components */
       /* If enabling this, set experimental.inlineSSRStyles to false */
-      // styles: {
-      //   configFile: 'assets/vuetify/settings.scss',
-      // },
+      styles: {
+        configFile: 'assets/vuetify/settings.scss',
+      },
       includeTransformAssetsUrls: {
         NuxtImg: ['src'],
         OgImage: ['image'],
@@ -115,9 +111,10 @@ export default defineNuxtConfig({
   },
 
   // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
-  // experimental: {
-  //   inlineSSRStyles: false,
-  // },
+  experimental: {
+    inlineSSRStyles: false,
+    componentIslands: true,
+  },
 
   image: {
     // dir: 'assets/images', // doesn't always work, for eg, with vercel etc, https://github.com/nuxt/image/issues/1006. Therefore, we are storing the images in public folder, to have them not processed by vite, but rather by nuxt-image module on-demand

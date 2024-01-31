@@ -44,10 +44,10 @@ export default defineConfig({
     pipeline: {
       get include() {
         const _content = [
-          /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/, // the default
-          './*.{js,cjs,ts,cts,mts}', // site.ts
-          '*/**/*.{js,cjs,ts,cts,mts}', // nuxt directories
-          '*-layer/**/*.{js,cjs,ts,cts,mts}', // nuxt layers
+          /\.(vue|svelte|astro|[jt]sx|mdx?|elm|php|phtml|html)($|\?)/, // the default
+          './*.{js,cjs,mjs,ts,cts,mts,json}', // site.ts
+          '*/**/*.{js,cjs,mjs,ts,cts,mts,json}', // nuxt directories
+          '*-layer/**/*.{js,cjs,mjs,ts,cts,mts,json}', // nuxt layers
         ]
         return process.env.NODE_ENV === 'production'
           ? _content

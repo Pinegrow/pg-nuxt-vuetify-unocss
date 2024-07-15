@@ -5,6 +5,7 @@ import {
 } from './themes/pg-tailwindcss/tokens.cjs'
 
 import { getFontsWithFallback } from './app/utils/font'
+// import { safelist } from './app/utils/colors' // not applicable
 
 import {
   defineConfig,

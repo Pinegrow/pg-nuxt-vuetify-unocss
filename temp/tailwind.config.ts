@@ -2,16 +2,20 @@ import {
   pg_colors,
   pg_fonts,
   pg_backgrounds,
-} from '../../themes/pg-tailwindcss/tokens.mjs'
+} from '../themes/pg-tailwindcss/tokens.mjs'
 
-import { getFontsWithFallback } from '../utils/font'
+import { getFontsWithFallback } from '../app/utils/font'
+
+import tailwindTypography from '@tailwindcss/typography'
+import tailwindForms from '@tailwindcss/forms'
+import tailwindCssPluginPinegrow from '@pinegrow/tailwindcss-plugin'
 
 export default {
   darkMode: 'class',
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@pinegrow/tailwindcss-plugin').default({
+    tailwindTypography,
+    tailwindForms,
+    tailwindCssPluginPinegrow({
       colors: pg_colors, // primary, secondary etc
       fonts: getFontsWithFallback(pg_fonts),
       backgrounds: pg_backgrounds, // bg-design-image, bg-design-image-large
@@ -20,14 +24,14 @@ export default {
 
   get content() {
     const _content = [
-      '{.,*-layer}/components/**/*.{js,vue,ts}',
-      '{.,*-layer}/layouts/**/*.vue',
-      '{.,*-layer}/pages/**/*.vue',
-      '{.,*-layer}/plugins/**/*.{js,ts}',
+      '{.,app,*-layer}/components/**/*.{js,vue,ts}',
+      '{.,app,*-layer}/layouts/**/*.vue',
+      '{.,app,*-layer}/pages/**/*.vue',
+      '{.,app,*-layer}/plugins/**/*.{js,ts}',
+      '{.,app,*-layer}/app.vue',
+      '{.,app,*-layer}/*.{mjs,js,ts}',
       '{.,*-layer}/nuxt.config.{js,ts}',
       '{.,*-layer}/vuetify.config.{js,ts}',
-      '{.,*-layer}/app.vue',
-      '{.,*-layer}/*.{mjs,js,ts}',
     ]
     return process.env.NODE_ENV === 'production'
       ? _content

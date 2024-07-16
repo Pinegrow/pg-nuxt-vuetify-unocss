@@ -1,38 +1,14 @@
 <script setup lang="ts">
   import { heroImageUrl } from '@/utils/hero'
 
-  const { optimizeImage } = useOptimizeImage()
-  const heroImageOptimized = {
-    alt: `hero`,
-    cover: true,
-    ...optimizeImage(
-      heroImageUrl,
-      /* options */
-      {
-        /* If using local images instead of unsplash url, enable netlify provider */
-        // provider:
-        //     process.env.NODE_ENV === 'production'
-        //       ? 'netlify'
-        //       : null /* defaults to ipx or ipxStatic */,
-        placeholder: false, // placeholder image before the actual image is fully loaded.
-      },
-      true /* return bgStyles */,
-    ),
-  }
-
-  const heroImage = heroImageOptimized.src
-  const bgStyles = heroImageOptimized.bgStyles
+  const heroCaption = 'Welcome To'
+  const heroTitle = 'Vue Designer'
+  const heroDescription =
+    'A desktop drag-and-drop editor for Mac, Windows and Linux that lets you visually design your Vue apps.'
 </script>
 <template>
   <section>
-    <v-img
-      :src="heroImageOptimized.src"
-      :srcset="heroImageOptimized.srcset"
-      :sizes="heroImageOptimized.sizes"
-      :max-height="800"
-      cover
-    >
-      <!-- <v-img :src="heroImageUrl" :max-height="800" cover> -->
+    <BackgroundImageWrapper :image-url="heroImageUrl">
       <div class="container mx-auto">
         <div
           class="pb-36 pt-2 px-6 relative rounded-3xl md:pb-48 lg:pb-72 lg:px-12"
@@ -57,7 +33,7 @@
           </div>
         </div>
       </div>
-    </v-img>
+    </BackgroundImageWrapper>
   </section>
 </template>
 <style scoped></style>

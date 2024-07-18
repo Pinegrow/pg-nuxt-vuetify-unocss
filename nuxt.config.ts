@@ -203,6 +203,7 @@ export default defineNuxtConfig({
     highlight: {
       //@ts-ignore
       langs: Object.keys(bundledLanguages),
+      // TODO: Nuxt content seem to not load the shiki theme correctly, so we have added the background color via unocss theming, refer to uno.config.ts typography preset configuration for details
       theme: 'dracula-soft',
     },
   },

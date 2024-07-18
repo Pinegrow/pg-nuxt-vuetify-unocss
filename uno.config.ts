@@ -27,7 +27,14 @@ export default defineConfig({
     presetWind(),
     // presetUno(),
     // ...custom presets
-    presetTypography(),
+    presetTypography({
+      // TODO: Nuxt content seem to not load the shiki theme correctly, so we have added the background color via unocss theming
+      cssExtend: {
+        '.prose pre': {
+          'background-color': '#282A36 !important',
+        },
+      },
+    }),
     // presetForms(), // conflicts with vuetify, so turned it off
     presetIcons({
       prefix: 'i-', // default prefix, do not change

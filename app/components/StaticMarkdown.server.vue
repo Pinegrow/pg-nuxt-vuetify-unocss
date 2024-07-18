@@ -25,7 +25,7 @@
 <template>
   <div
     id="post"
-    class="dark:prose-invert dark:prose-gray-100 flex flex-col heading-offset max-w-none prose prose-gray-800 rounded-lg"
+    class="prose prose-gray dark:prose-invert dark:prose-gray flex flex-col heading-offset max-w-none rounded-lg"
   >
     <ContentRenderer id="content" :value="post">
       <template #empty>

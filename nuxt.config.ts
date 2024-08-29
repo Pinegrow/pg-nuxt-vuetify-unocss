@@ -42,6 +42,10 @@ export default defineNuxtConfig({
     componentIslands: true,
   },
 
+  // nitro: {
+  //   preset: 'netlify-static',
+  // },
+
   app: {
     baseURL: '/', // defaulted by nuxt
     // Look into HeadAndMeta.vue for the rest
@@ -141,7 +145,11 @@ export default defineNuxtConfig({
     //   xxl: 1536,
     //   '2xl': 1536,
     // },
-    provider: 'ipx',
+
+    // TODO: Currently image optimization is paused until some bugs in Nuxt Image modules are fixed
+    // provider: 'ipx',
+    provider: 'none',
+
     presets: {
       avatar: {
         modifiers: {

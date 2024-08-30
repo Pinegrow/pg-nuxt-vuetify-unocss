@@ -32,10 +32,10 @@ npm install #or use pnpm
 
 (or)
 
-If you prefer a blank template (a single empty home page) instead,
+If you prefer a minimal template (a single empty home page) instead,
 
 ```bash
-npx giget@latest gh:pinegrow/pg-nuxt-vuetify-unocss#blank my-nuxt-vuetify-unocss-app #project-name
+npx giget@latest gh:pinegrow/pg-nuxt-vuetify-unocss#minimal my-nuxt-vuetify-unocss-app #project-name
 cd my-nuxt-vuetify-unocss-app
 npm install #or use pnpm
 ```

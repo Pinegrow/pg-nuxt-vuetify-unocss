@@ -41,9 +41,9 @@ export default defineConfig({
     }),
   ],
   // Equivalent to tailwind's important properties in tailwind config file
-  postprocess(obj) {
-    obj.entries.forEach((i) => (i[1] = i[1] + ' !important'))
-  },
+  // postprocess(obj) {
+  //   obj.entries.forEach((i) => (i[1] = i[1] + ' !important'))
+  // },
   theme: {
     colors: pg_colors,
     fontFamily: getFontsWithFallback(pg_fonts),

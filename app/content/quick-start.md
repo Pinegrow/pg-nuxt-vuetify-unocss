@@ -96,13 +96,16 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ### UI Frameworks
 
 - [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/) - Hundreds of beautifully handcrafted Vue components, easily customizable with a powerful set of utilities, composables and directives.
-  👉 Note: This template turns off Vuetify utilities, and instead use UnoCSS instead for styling.
+
+  - 👉 Note: This template turns off Vuetify utilities, and instead use UnoCSS instead for styling.
 
 - [UnoCSS](https://unocss.dev/integrations/nuxt) - The powerful instant on-demand atomic CSS Engine.
-  👉 Note: This template turns off Vuetify utilities, and instead use UnoCSS instead for styling. In order to resolve Vuetify's !important in default theme, uno.config.ts includes a `postprocess` to take precedence.
 
-- [Nuxt Vuetify Module](https://vuetify-nuxt-module.netlify.app/) - This zero-config Nuxt module helps you set up Vuetify in your Nuxt application in seconds. Provides an amazing abstraction over the necessary setup enabling automatic tree-shaking, ability to use Pure CSS icons (UnoCSS Preset icons), supports Nuxt layers and hooks, and more...
-  👉 provides a new icon-set for Vuetify called `unocss-mdi`. In order to use all iconsets in Vue Designer's icon-picker, follow the instructions displayed in Vue Designer's Config Panel under the **Icon Picker** tab. Also refer to the nuxt module's official documentation [here](https://vuetify-nuxt-module.netlify.app/guide/icons/unocss-preset-icons.html).
+  - 👉 Note: This template turns off Vuetify utilities, and instead use UnoCSS instead for styling.
+  - **ACTION REQUIRED**: In order to resolve Vuetify's !important in default theme, uno.config.ts includes (currently commented-out) a `postprocess` to take precedence.
+
+- [Nuxt Vuetify Module](https://nuxt.vuetifyjs.com/) - This zero-config Nuxt module helps you set up Vuetify in your Nuxt application in seconds. Provides an amazing abstraction over the necessary setup enabling automatic tree-shaking, ability to use Pure CSS icons (UnoCSS Preset icons), supports Nuxt layers and hooks, and more...
+  - 👉 provides a new icon-set for Vuetify called `unocss-mdi`. In order to use all iconsets in Vue Designer's icon-picker, follow the instructions displayed in Vue Designer's Config Panel under the **Icon Picker** tab. Also refer to the nuxt module's official documentation [here](https://nuxt.vuetifyjs.com/guide/icons/unocss-preset-icons.html).
 
 ### File-based CMS (markdown)
 
@@ -121,6 +124,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [VeeValidate](https://vee-validate.logaretm.com/v4/integrations/nuxt/) takes care of value tracking, validation, errors, submissions and more.
 - [Nuxt Image](https://image.nuxt.com/) - Plug-and-play image optimization for Nuxt apps.
 - [Nuxt SEO](https://nuxtseo.com/) - Amazing collection of hand-crafted Nuxt Modules for all SEO needs with a unified site config. Includes `nuxt-site-config`, `nuxt-simple-robots`, `nuxt-simple-sitemap`, `nuxt-og-image`, `nuxt-link-checker`, `nuxt-seo-experiments`, `nuxt-schema-org`.
+  - OG images and nuxtseo features can be previewed with nuxt-devtools during development. OG images can also be viewed using URL in this form - `/__og-image__/image/<path>/og.<extension>`
 
 ### Devtools
 

@@ -452,26 +452,27 @@
     "app/components/HeroSection.vue": {
       "frameworks": [
         "@nuxt/image",
+        "pg.insight.events",
         "@nuxt/icon",
+        "pg.vue.tree.painter",
         "@vue/devtools",
         "@nuxt/devtools",
-        "@unocss/preset-icons",
         "@pinegrow/nuxt-module",
+        "@unocss/preset-icons",
         "nuxt",
-        "vue",
-        "app_designer",
-        "project",
-        "pg.insight.events",
-        "pg.vue.tree.painter",
         "pg.css.grid",
         "pg.image.overlay",
         "pg.code-validator",
+        "vue",
+        "project",
         "pg.project.items",
+        "app_designer",
         "pg.asset.manager",
-        "vuetify",
         "tw.flowbite",
+        "vuetify",
         "tw",
-        "pg.html"
+        "pg.html",
+        "pine.cone.lib"
       ]
     }
   },
@@ -479,26 +480,27 @@
   "open-pages": ["app/components/HeroSection.vue"],
   "frameworks": [
     "@nuxt/image",
+    "pg.insight.events",
     "@nuxt/icon",
+    "pg.vue.tree.painter",
     "@vue/devtools",
     "@nuxt/devtools",
-    "@unocss/preset-icons",
     "@pinegrow/nuxt-module",
+    "@unocss/preset-icons",
     "nuxt",
-    "vue",
-    "app_designer",
-    "project",
-    "pg.insight.events",
-    "pg.vue.tree.painter",
     "pg.css.grid",
     "pg.image.overlay",
     "pg.code-validator",
+    "vue",
+    "project",
     "pg.project.items",
+    "app_designer",
     "pg.asset.manager",
-    "vuetify",
     "tw.flowbite",
+    "vuetify",
     "tw",
-    "pg.html"
+    "pg.html",
+    "pine.cone.lib"
   ],
   "urls": {
     "pages/index.vue": { "open-page-views": [{ "w": 1024, "h": 1024 }] },
@@ -543,7 +545,7 @@
     "components/HotDeals.vue": { "open-page-views": [{ "w": 1024, "h": 0 }] },
     "pages/%5Bcategory%5D.vue": { "open-page-views": [{ "w": 1024, "h": 0 }] },
     "app/components/HeroSection.vue": {
-      "open-page-views": [{ "w": 640, "h": 0 }]
+      "open-page-views": [{ "w": 1024, "h": 0 }]
     }
   },
   "recent-classes": [

@@ -6,7 +6,6 @@
     </NuxtLayout>
   </div>
 </template>
-<style></style>
 
 <style lang="scss">
   // @use '~/assets/vuetify/settings';
